@@ -1,4 +1,4 @@
-#!/home/tushar/anaconda3/bin/python
+#!/usr/bin/python3
 # Hadoop Streaming : Count of non-english words
 # Reducer.py
 
@@ -27,7 +27,7 @@ for line in sys.stdin:
                     out_dict[word] += 1
                 else:
                     out_dict[word] = 1
-            # Reducer output will be file name and the dictionary containing non-english words with counts.
+            # Reducer output will be file name and the dictionary containing non-english words with counts
             print(prev_file,'\t',out_dict)
         prev_file = curr_file
         prev_word_list = curr_word_list

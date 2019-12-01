@@ -1,4 +1,4 @@
-#!/home/tushar/anaconda3/bin/python
+#!/usr/bin/python3
 # Hadoop Streaming : Program to count the non-English words in a file.
 # mapper.py
 
@@ -40,7 +40,7 @@ for line in sys.stdin:
                 word_list.append(word.lower())
             else:
                 pass
-# Mapper output is filename on which mapper is executing and the list of non english words.
+# Mapper output is filename on which mapper is executing and the list of non english words
 print(filename,'\t',word_list)
     
 
