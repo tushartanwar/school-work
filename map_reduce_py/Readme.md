@@ -1,0 +1,67 @@
+# Description
+
+To write a map reduce job which gives the count of non-english words from every file on which the map reduce job is running. 
+
+# Commands
+
+Below is the command to submit the map and reduce job on hadoop:
+
+```shell
+mapred streaming \
+-file mapper_filterWrds.py -mapper mapper_filterWrds.py \
+-file reducer_filterWrds.py -reducer reducer_filterWrds.py \
+-input /data/ub/Weslyan_Songs/output/*.txt \
+-file words_alpha.txt \
+-output /out/Weslyan_Songs
+```
+
+# Sample Input
+
+Sample File - Ramayana.txt
+
+```textile
+Name: Sita, Ramayana
+Translation Source: Wesleyan University
+Artist: Swarna Chitrakar
+
+Text:
+Ram Prince of Ayodhya and hero of the Ramayana, he is depicted as a human hero and as an avatara or incarnation of Vishnu, usually counted as the seventh incarnation in a list of ten. He married Sita and was to assume the throne but, due to palace intrigue, was exiled to the forest, where he was accompanied by his wife and younger brother Lakshmana. There they experienced many adventures, namely the abduction of Sita by Ravana. was married with all the rituals. He had to go to the forest to honor his father’s promise. Ram went ahead, followed by Janaki. Lakshman, the archer went behind her.
+
+The heat of the Sun above, the hot sand underfoot; Sita the soft (sheltered) woman couldn’t walk. Lakhman broke off a thick branch and advised her to walk slowly with the help of that.
+
+They reached Panchabati forest where Lakhsman built a hut made of leaves. There Ram and Sita played a game of dice, guarded by Lakhsman.
+
+Shurpanakha had come to cull flowers. Lakshman cut off her nose. She went to her brother Ravana with her nose in her hand and rolled at his feet.
+
+The clever Ravana lost his temper, seeing the sorry state of his sister. He started fuming.
+
+He summoned Marich and ordered him to go to Panchabati where the trio was. He should call for Lakshman in Ram’s voice when Ram went to catch him
+
+Being asked to do that, Marich turned into a magic deer and went to dance in front of the hut. Chandramukhi (the moon faced beauty Sita) asked Ram to get her the beautiful deer to make her happy.
+
+Ram was unable to refuse her request and went to catch the deer. As he ran after the deer it almost flew away.
+
+The magic deer now cried out in Ram’s voice—Oh I am being killed, come my brother Lakkshman. Sita heard the calls.
+
+Where are you, brother lakkshman, take this pan and go and look for your elder brother. But my brother had asked me to guard you my dear. Why are you asking me to go away?
+
+I know why you don’t want to go. If Ram dies, you will be my husband. Laksman
+
+Put both hands to his ears. Shame on you Sita—you are my mother Sumitra, Ram is my father.
+```
+
+# Sample Output
+
+- **Mapper Output:** /out/Weslyan_Songs/mapper/part-00001
+  
+  ```textile
+  Ramayana.txt     ['ayodhya', 'ramayana', 'lakshmana', 'ravana', 'janaki', 'lakshman', 'lakhman', 'panchabati', 'lakhsman', 'lakhsman', 'shurpanakha', 'lakshman', 'ravana']
+  ```
+
+- **Reducer Output:** /out/Weslyan_Songs/part-00000
+  
+  ```textile
+  Ramayana.txt     {'ayodhya': 1, 'ramayana': 1, 'lakshmana': 1, 'ravana': 3, 'janaki': 1, 'lakshman': 3, 'lakhman': 1, 'panchabati': 2, 'lakhsman': 2, 'shurpanakha': 1, 'marich': 2, 'chandramukhi': 1, 'lakkshman': 2, 'laksman': 1, 'sumitra': 1}
+  ```
+
+
