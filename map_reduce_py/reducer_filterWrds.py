@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 # Hadoop Streaming : Count of non-english words
-# Reducer.py
+# Reducer_filterWrds.py
+# Author : Tushar Tanwar
 
 import sys
 import ast

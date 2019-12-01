@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 # Hadoop Streaming : Program to count the non-English words in a file.
-# mapper.py
+# mapper_filterWrds.py
+# Author : Tushar Tanwar
 
 import re
 import sys
