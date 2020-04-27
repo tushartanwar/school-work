@@ -40,61 +40,62 @@ Data scraped from sofifa.com using python module Scrapy and it has been divided 
   **Columns:** player_id, LS, ST, RS, LW, LF, CF, RF, RW, LAM, CAM, RAM, LM, LCM, CM, RCM, RM, LWB, LDM, CDM, RDM, RWB, LB, LCB, CB, RCB, RB
   **Description:** Contains player's playing position rating
 
-  ## Data Analysis
+## Data Analysis
 
-  Data analysis is done to understand the pattern of attributes of players for different positions along with the dependency of these attributes on different player characteristics like age, BMI, wage, etc.
-  Data analysis is being done for the following:
+Data analysis is done to understand the pattern of attributes of players for different positions along with the dependency of these attributes on different player characteristics like age, BMI, wage, etc.
+Data analysis is being done for the following:
 
-  - Top 5 football clubs with players collectively higher overall rating
-  - Top 5 football clubs with players collectively higher value
-  - Players position and comparison to their values
-  - Players Age vs Rating vs Value
-  - Correlation of Players attributes
+- Top 5 football clubs with players collectively higher overall rating
+- Top 5 football clubs with players collectively higher value
+- Players position and comparison to their values
+- Players Age vs Rating vs Value
+- Correlation of Players attributes
 
-  ## Execution
+## Execution
 
-  - Python Scrapy module to scrape data from sofifa.com in a csv file.
-  - Loaded csv file in Pandas to clean, normalize, de-duping and load data in sqlite3 tables.
-  - Used matplotlib and seaborn to visualize the data from the sqlite3 tables.
-  - Identified key attributes necessary for every position and added weights to those attributes using Pandas.
-  - Data segregation as per playing position using Pandas to implement K-Nearest Neighbor for predicting each player’s best position as per the algorithm.
-  - Assigned points to every player as per the predicted position on the basis of the rating in the key attributes necessary for that position.
-  - Linear programming using python module Pulp to formulate an equation for an attacking,
-    defensive and balanced team with an overall rating of 84.
-  - Fit the players in the equation as per the assigned points using Pulp.
-  - Image processing using python module PIL to visualize the selected players as per their position on a football field.
+- Python Scrapy module to scrape data from sofifa.com in a csv file.
+  - *Code can be found at: https://github.com/tushartanwar/scrapy_web_scraper*
+- Loaded csv file in Pandas to clean, normalize, de-duping and load data in sqlite3 tables.
+- Used matplotlib and seaborn to visualize the data from the sqlite3 tables.
+- Identified key attributes necessary for every position and added weights to those attributes using Pandas.
+- Data segregation as per playing position using Pandas to implement K-Nearest Neighbor for predicting each player’s best position as per the algorithm.
+- Assigned points to every player as per the predicted position on the basis of the rating in the key attributes necessary for that position.
+- Linear programming using python module Pulp to formulate an equation for an attacking,
+  defensive and balanced team with an overall rating of 84.
+- Fit the players in the equation as per the assigned points using Pulp.
+- Image processing using python module PIL to visualize the selected players as per their position on a football field.
 
-  ## Player Classification Model
+## Player Classification Model
 
-  Using K-nearest neighbor, try to predict the players position in football based on the players playing attributes.
-  Took player preferred position as the class and their attributes as the features to feed it into the KNN classifier so that a cluster for player attributes as per their positions can be formed.
+Using K-nearest neighbor, try to predict the players position in football based on the players playing attributes.
+Took player preferred position as the class and their attributes as the features to feed it into the KNN classifier so that a cluster for player attributes as per their positions can be formed.
 
-  ## Results
+## Results
 
-  Below are the results after training the model.
-  **Nearest Neighbors:** 7
-  **Training Error:** 0.09509408602150538
-  **Test Error:** 0.11581067472306139
-  **CV Error:** 0.120943 +-0.021380
+Below are the results after training the model.
+**Nearest Neighbors:** 7
+**Training Error:** 0.09509408602150538
+**Test Error:** 0.11581067472306139
+**CV Error:** 0.120943 +-0.021380
 
-  ## Conclusion
+## Conclusion
 
-  We formulated a team of 11 players for the formation 3-4-3 by predicting the player position using KNN classifier and formed three teams as attacking, defensive and balanced so that the overall rating of the team comes out to be 84.
+We formulated a team of 11 players for the formation 3-4-3 by predicting the player position using KNN classifier and formed three teams as attacking, defensive and balanced so that the overall rating of the team comes out to be 84.
 
-  ## Future Research Directions
+## Future Research Directions
 
-  Right now, we have only considered the attributes of the player while forming the team but below are the things which can be considered:
+Right now, we have only considered the attributes of the player while forming the team but below are the things which can be considered:
 
-  - Wage of the players can also be considered while forming the team as every club has a fixed budget in which they have to accommodate all the players’ wages.
-  - Preferred leg of the players can also be considered while selecting the position of the player.
-  - Players coordination can also be considered while forming the team.
-  - Overall team rating can be parameterized because as of now we have only considered the
-    overall team rating to be 84.
-  - There are different formations for which the prediction can be made. Right now, we have only considered 3-4-3 formation.
+- Wage of the players can also be considered while forming the team as every club has a fixed budget in which they have to accommodate all the players’ wages.
+- Preferred leg of the players can also be considered while selecting the position of the player.
+- Players coordination can also be considered while forming the team.
+- Overall team rating can be parameterized because as of now we have only considered the
+  overall team rating to be 84.
+- There are different formations for which the prediction can be made. Right now, we have only considered 3-4-3 formation.
 
-  ## References
+## References
 
-  - https://sofifa.com/
-  - https://www.fontsquirrel.com/fonts/list/popular
-  - https://python-graph-gallery.com/100-calling-a-color-with-seaborn/
-  - http://logfact.com/football-soccer-field-player-positions-abbreviations/
+- https://sofifa.com/
+- https://www.fontsquirrel.com/fonts/list/popular
+- https://python-graph-gallery.com/100-calling-a-color-with-seaborn/
+- http://logfact.com/football-soccer-field-player-positions-abbreviations/
