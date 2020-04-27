@@ -73,10 +73,11 @@ Took player preferred position as the class and their attributes as the features
 ## Results
 
 Below are the results after training the model.
-**Nearest Neighbors:** 7
-**Training Error:** 0.09509408602150538
-**Test Error:** 0.11581067472306139
-**CV Error:** 0.120943 +-0.021380
+
+- **Nearest Neighbors:** 7
+- **Training Error:** 0.09509408602150538
+- **Test Error:** 0.11581067472306139
+- **CV Error:** 0.120943 +-0.021380
 
 ## Conclusion
 
